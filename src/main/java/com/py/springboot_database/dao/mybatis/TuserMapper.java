@@ -1,17 +1,13 @@
 package com.py.springboot_database.dao.mybatis;
 
-import com.py.springboot_database.entity.mybatis.Tuser;
+import com.py.springboot_database.model.entity.mybatis.Tuser;
+import org.apache.ibatis.annotations.Mapper;
 
-//@Mapper(SpringbootDatabaseApplication类中使用了@MapperScan注解,故此处可以省略)
+@Mapper
 public interface TuserMapper {
-    int deleteByPrimaryKey(Long id);
-
+    int deleteByPrimaryKey(long id);
     int insert(Tuser record);
-
-    Tuser selectByPrimaryKey(Long id);
-
-    Tuser selectByUserName(String username);
-
+    Tuser selectByPrimaryKey(long id);
+    Tuser selectByUserName(String name);
     int updateByPrimaryKeySelective(Tuser record);
-
 }
